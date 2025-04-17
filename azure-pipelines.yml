@@ -8,10 +8,10 @@ trigger:
 # Can be deleted if self-hosted agents are not being used
 # See https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/agents
 pool:
-  name: Default
+  name: resourcehub
 
 container:
-  image: quay.io/redhat-appstudio/rhtap-task-runner:1.5
+  image: quay.io/redhat-appstudio/rhtap-task-runner:latest
   options: --privileged
 
 # Using 'rhtap' variable group by default
@@ -19,7 +19,7 @@ container:
 # Can be deleted if the variables are set differently
 # See https://learn.microsoft.com/en-us/azure/devops/pipelines/process/variables
 variables:
-- group: rhtap
+- group: mvaldron-variables
 
 steps:
   - bash: |
